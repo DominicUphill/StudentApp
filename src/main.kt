@@ -2,6 +2,7 @@ fun main(){
     while(true) {
         println("Please enter a students name (or type quit to exit the program)")
         val name = readln()
+
         if (name == "quit")
             break
 
@@ -16,5 +17,9 @@ fun main(){
 
         val student = Student(id, name, course, mark)
         println(student)
+
+        println("Mark: ${student.mark}")
+        println("Grade: ${student.getGrade()}")
+        println("Passed: ${student.didPass()}")
     }
 }
