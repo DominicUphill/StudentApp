@@ -13,4 +13,15 @@ class University(val modules: MutableList<Module> = mutableListOf(), val student
         students.add(student)
     }
 
+    fun findStudentsByName(name: String): MutableList<Student> {
+        val matchingStudents: MutableList<Student> = mutableListOf()
+
+        for (student in students) {
+            if (student.name == name) {
+                matchingStudents.add(student)
+            }
+        }
+        return matchingStudents
+    }
+
 }
