@@ -8,4 +8,9 @@ class University(val modules: MutableList<Module> = mutableListOf(), val student
         }
         return null
     }
+
+    fun enrolStudent(student: Student) {
+        students.add(student)
+    }
+
 }

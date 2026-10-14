@@ -1,4 +1,4 @@
-class Student(val id: String, val name: String, val course: String, val mark: Double) {
+class Student(val id: String, val name: String, val course: String, val mark: Double, val modules: MutableList<Module> = mutableListOf()) {
 
 
     fun getGrade(): String {
