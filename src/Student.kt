@@ -1,4 +1,7 @@
-class Student(protected val id: String,protected val name: String,protected val course: String,protected val mark: Double,protected val modules: MutableList<Module> = mutableListOf()) {
+class Student(idIn: String,protected val name: String,protected val course: String,protected val mark: Double,protected val modules: MutableList<Module> = mutableListOf()) {
+
+    var id = idIn
+        protected set
 
 
     fun getGrade(): String {
