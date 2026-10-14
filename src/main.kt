@@ -1,5 +1,3 @@
-import kotlin.system.exitProcess
-
 fun main(){
     val university = University()
     var choice = ""
