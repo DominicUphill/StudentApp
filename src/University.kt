@@ -1,6 +1,11 @@
-class University(val modules: MutableList<String> = mutableListOf(), val students: MutableList<String> = mutableListOf()) {
+class University(val modules: MutableList<Module> = mutableListOf(), val students: MutableList<Student> = mutableListOf()) {
 
-    fun findStudentByID() {
-
+    fun findStudentByID(id: String): Student? {
+        for (student in students) {
+            if (student.id == id) {
+                return student
+            }
+        }
+        return null
     }
 }
