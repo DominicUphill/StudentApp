@@ -1,25 +1,49 @@
+import kotlin.system.exitProcess
+
 fun main(){
-    while(true) {
-        println("Please enter a students name (or type quit to exit the program)")
-        val name = readln()
+    val university = University()
+    var choice = ""
 
-        if (name == "quit")
-            break
+    while (choice != "4") {
+        println()
+        println("1. Add a student")
+        println("2. Search for student by ID")
+        println("3. Search for student by name")
+        println("4. Quit")
+        println("Please enter your choice:")
+        choice = readln()
 
-        println("Please enter the students ID")
-        val id = readln()
+        when (choice) {
+            "1" -> {
+                println("Please enter a students name")
+                val name = readln()
 
-        println("Please enter the students course")
-        val course = readln()
+                println("Please enter the students ID")
+                val id = readln()
 
-        println("Please enter the students mark")
-        val mark = readln().toDouble()
+                println("Please enter the students course")
+                val course = readln()
 
-        val student = Student(id, name, course, mark)
-        println(student)
+                println("Please enter the students mark")
+                val mark = readln().toDouble()
 
-        println("Mark: ${student.mark}")
-        println("Grade: ${student.getGrade()}")
-        println("Passed: ${student.didPass()}")
+                val student = Student(id, name, course, mark, )
+
+                university.enrolStudent(student)
+                println("Student added successfully")
+            }
+            "2" -> {
+                println("Please enter a student id to search")
+                val id = readln()
+                val student = university.findStudentByID(id)
+                println(student)
+            }
+            "3" -> {
+                println("Please enter a students name to search")
+                val name = readln()
+                val student = university.findStudentsByName(name)
+                println(student)
+            }
+        }
     }
 }
